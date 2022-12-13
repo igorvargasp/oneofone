@@ -1,10 +1,11 @@
 import Image from "next/image";
-import { Button } from "../src/components/Button/Button";
-import { Input } from "../src/components/Input/Input";
+import { Button } from "../../src/components/Button/Button";
+import { Input } from "../../src/components/Input/Input";
 import { useRouter } from "next/router";
 
-export default function Home() {
+export default function Register() {
   const router = useRouter();
+
   return (
     <div className="w-screen h-screen flex">
       <section
@@ -29,7 +30,7 @@ export default function Home() {
       </section>
       <section className="w-1/2 justify-center items-center flex flex-col h-full border relative">
         <Image
-          src={require("../src/components/assets/img/logo.png")}
+          src={require("../../src/components/assets/img/logo.png")}
           alt={"logo of the auction website"}
           width={100}
           height={100}
@@ -61,6 +62,26 @@ export default function Home() {
             }
           />
           <Input
+            label={"Name"}
+            placeholder={"Type your name"}
+            icon={
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                ></path>
+              </svg>
+            }
+          />
+          <Input
             label={"Password"}
             placeholder={"Type your password"}
             icon={
@@ -81,17 +102,17 @@ export default function Home() {
             }
           />
           <Button
-            label={"LOGIN"}
+            label={"CONFIRM"}
             query={
               "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mb-5"
             }
           />
           <Button
-            label={"Sing up"}
+            label={"LOGIN"}
             query={
               "text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800"
             }
-            onClick={() => router.push("/register")}
+            onClick={() => router.push("/")}
           />
         </div>
       </section>
