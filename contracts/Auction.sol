@@ -2,7 +2,6 @@
 pragma solidity ^0.8.17;
 
 import "./Auth.sol";
-import "./Inventory.sol";
 import "./SafeMath.sol";
 
 contract AuctionFactory {
@@ -156,13 +155,12 @@ contract Auction is Auth {
     function returnContents()
         public
         view
-        returns (string memory, uint, string memory, Buyer[count] memory)
+        returns (string memory, uint, string memory, Buyer[] memory)
     {
-        return (title, startPrice, description, buyer[count]);
+        return (title, startPrice, description, buyer);
     }
 
-    function returnWinners() public view returns (Buyer[] memory) {;
-      return (buyer);
+    function returnWinners() public view returns (Buyer[] memory) {
+        return (buyer);
     }
-    
 }

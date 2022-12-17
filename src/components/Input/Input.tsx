@@ -1,12 +1,17 @@
 import { ReactNode } from "react";
 
-export interface InputProps {
+export interface InputProps extends React.HTMLProps<HTMLInputElement> {
   label: string;
   placeholder: string;
   icon: ReactNode;
 }
 
-export const Input: React.FC<InputProps> = ({ label, placeholder, icon }) => {
+export const Input: React.FC<InputProps> = ({
+  label,
+  placeholder,
+  icon,
+  onChange,
+}) => {
   return (
     <div className="flex flex-col w-full mb-5">
       <label
@@ -24,6 +29,7 @@ export const Input: React.FC<InputProps> = ({ label, placeholder, icon }) => {
           id="key-icon"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           placeholder={placeholder}
+          onChange={onChange}
         />
       </div>
     </div>

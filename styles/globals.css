@@ -38,3 +38,10 @@ a {
   }
 }
 
+.border-animate {
+  
+  -webkit-animation: AnimationName 3s ease infinite;
+  -moz-animation: AnimationName 3s ease infinite;
+  animation: AnimationName 3s ease infinite;
+}
+
