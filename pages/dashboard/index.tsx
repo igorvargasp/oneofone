@@ -29,11 +29,8 @@ export default function DashBoard() {
     if (status === "notConnected") {
       Router.push("/");
     }
-  }, [status, fileDownloaded, fileUploaded]);
-
-  useEffect(() => {
     getListOfOpenAuctions();
-  }, [list]);
+  }, [status, fileDownloaded, fileUploaded, list]);
 
   const donwloadFromIpfs = async () => {
     let storage = new ThirdwebStorage();
@@ -167,17 +164,7 @@ export default function DashBoard() {
       <section className="w-full flex flex-col items-center justify-center pt-20">
         <div className="w-2/3 flex border items-center justify-center"></div>
         <h1 className="font-bold text-4xl pt-20">Running Auctions</h1>
-        <div className="w-full flex flex-col items-center justify-center pt-20 gap-5">
-          {list.map((item, index) => {
-            return (
-              <div key={index}>
-                <h1>{item[0]}</h1>
-                <h1>{item[1]}</h1>
-                <h1>{item[2]}</h1>
-              </div>
-            );
-          })}
-        </div>
+        <div className="w-full flex flex-col items-center justify-center pt-20 gap-5"></div>
       </section>
     </div>
   );

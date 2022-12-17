@@ -69,7 +69,7 @@ export default function Home() {
         </h1>
         <h4 className="text-cyan-50 text-3xl pt-5">
           Here you can find and sell
-          <strong className="text-yellow-300 "> everything</strong>
+          <strong className="text-yellow-300 "> Your things</strong>
         </h4>
       </section>
       <section className="w-1/2 justify-center items-center flex flex-col h-full border relative">
